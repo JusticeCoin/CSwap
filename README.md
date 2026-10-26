@@ -1,5 +1,7 @@
 # C Swap
 
+> so that a mind can remain untamed, without losing itself, or everybody else.
+
 One idea written at several levels of language. The reader taps the block and it swaps in place to the next level. A writer keeps full-strength text and gives readers an easier way in.
 
 The default trio:
