@@ -11,6 +11,9 @@
     "./element": "./src/element.js",
     "./parse": "./src/parse.js",
     "./remark": "./src/remark.js",
+    "./intake": "./src/intake.js",
+    "./intake-ui": "./src/intake-ui.js",
+    "./chunk": "./src/chunk.js",
     "./react": "./src/react.jsx"
   },
   "files": ["src", "bundle", "docs", "demo.html", "README.md", "LICENSE"],

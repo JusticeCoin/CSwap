@@ -5,6 +5,6 @@ export default defineConfig({
   build: {
     outDir: 'bundle',
     emptyOutDir: true,
-    lib: { entry: 'src/element.js', name: 'CSwap', formats: ['iife'], fileName: () => 'cswap.iife.js' },
+    lib: { entry: 'src/bundle.js', name: 'CSwap', formats: ['iife'], fileName: () => 'cswap.iife.js' },
   },
 });
