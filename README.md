@@ -77,6 +77,22 @@ Only CSS custom properties, all with defaults (no dependency on any app's tokens
 
 Shadow parts for deeper styling: `root`, `head`, `tab`, `hint`, `stage`, `provenance`. Style the text itself on `c-level` (it is ordinary light DOM).
 
+## Intake: from a whole text to swaps
+
+Authors should not have to hand-write every swap. `<c-swap-intake>` (see `intake.html`) takes the whole text and has two modes:
+
+- **Automatic.** Paste everything. CSwap breaks it into chunks (`chunkText`), scores each for reading ease, and drafts the Beginner and Cub levels for the hard-to-read chunks only (easy prose, headings, lists and code are left alone). Every drafted level is created as `ai` (not reviewed). It becomes `approved` only when the author clicks Approve. Editing a draft does not approve it.
+- **Manual.** CSwap breaks the text into chunks; the author switches on the chunks they want and writes every level (`author`).
+
+```js
+import '@justicecoin/cswap/intake-ui';
+const intake = document.querySelector('c-swap-intake');
+intake.translate = async ({ text, level, audience }) => myModel(text, level, audience); // bring your own
+intake.addEventListener('cswap:intake-change', e => save(e.detail.syntax));
+```
+
+No model or key is built in. Without a `translate` function the screen uses a no-AI demo translator (simple word swaps) so the flow can be shown. The same steps are available without UI from `@justicecoin/cswap/intake` (`createIntake`, `draftAll`, `approveLevel`, `toSyntax`, ...) and `@justicecoin/cswap/chunk`. The result is `:::swap` text that `parseCSwaps` reads back, with `+` and `~` flags preserved.
+
 ## Provenance rules
 
 Every level carries its provenance, always visible under the text. Telling author-approved from merely AI-generated is the top priority.

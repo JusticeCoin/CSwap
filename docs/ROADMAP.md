@@ -9,6 +9,9 @@ Intentionally **not built yet** in v0.1.
 - **Optional reader-time mode**, server-proxied so keys never reach the browser. Always labeled "AI generated · not reviewed by the author".
 - Per-author and per-post configuration of the B and C levels.
 
+- The intake screen ships with a no-AI demo translator only; wiring a real model (keys, rate limits, a proxy) is not done.
+- Chunking and reading ease are English-oriented heuristics; other languages need their own `score` and sentence splitter.
+
 ## Publishing integrations
 
 - WordPress, Hugo and Jekyll shortcodes.

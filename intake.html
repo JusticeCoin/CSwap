@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>C Swap intake</title>
+<style>
+  body { margin: 0; padding: 28px 16px 60px; background: #111; color: #eee; font-family: system-ui, sans-serif; }
+  main { max-width: 780px; margin: 0 auto; }
+</style>
+</head>
+<body>
+<main><c-swap-intake></c-swap-intake></main>
+<script src="bundle/cswap.iife.js"></script>
+<script>
+  // #auto or #manual in the URL fills the sample text and starts straight away (handy for demos)
+  var el = document.querySelector('c-swap-intake');
+  var mode = location.hash.slice(1);
+  if (mode === 'auto' || mode === 'manual') {
+    el.start(CSwap.SAMPLE_TEXT, mode === 'auto' ? 'automatic' : 'manual');
+  }
+</script>
+</body>
+</html>
