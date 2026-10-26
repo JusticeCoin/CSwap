@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>C Swap demo</title>
+<style>
+  body { margin: 0; padding: 32px 16px; background: #111; color: #eee; font-family: system-ui, sans-serif; }
+  main { max-width: 640px; margin: 0 auto; }
+  h1 { font-size: 22px; } h2 { font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; opacity: .6; margin-top: 36px; }
+  p { line-height: 1.7; } code { background: #222; padding: 1px 5px; border-radius: 4px; }
+  #log { font: 12px/1.6 ui-monospace, monospace; color: #9ad; white-space: pre-wrap; }
+  .themed { --cswap-color-1: #ffd9a0; --cswap-color-2: #ff8fb1; --cswap-color-3: #b39dff; --cswap-font: Georgia, serif; --cswap-line: #6a5a3a; }
+</style>
+</head>
+<body>
+<main>
+  <h1>C Swap</h1>
+  <p>Tap a block to swap it to the next level. Shift-click, or the left arrow key, goes back. Click a label to jump to it.</p>
+
+  <h2>Default trio, opens on Author</h2>
+  <c-swap>
+    <c-level label="Author">Every adjudicated outcome is weighted seven to three between human and machine reasoning, and the weighting is disclosed alongside each verdict.</c-level>
+    <c-level label="Beginner" provenance="approved">When a case is decided, people count for 70% and AI counts for 30%. We always show you that split.</c-level>
+    <c-level label="Cub" provenance="ai">People get most of the vote. AI gets a smaller part. We tell you how much.</c-level>
+  </c-swap>
+
+  <h2>Starts on Beginner (start="B")</h2>
+  <c-swap start="B">
+    <c-level label="Author">The protocol treats a verdict as provisional until the appeal window closes.</c-level>
+    <c-level label="Beginner" provenance="approved">A decision is not final until the time for appeals runs out.</c-level>
+    <c-level label="Cub" provenance="ai">You can still say "wait" for a while. Then it is done.</c-level>
+  </c-swap>
+
+  <h2>Four custom levels, themed with CSS custom properties</h2>
+  <c-swap class="themed">
+    <c-level label="Expert">Idempotent operations commute with repetition: applying one twice equals applying it once.</c-level>
+    <c-level label="Plain">Doing it twice gives the same result as doing it once.</c-level>
+    <c-level label="Kid">Pressing the same button again does nothing new.</c-level>
+    <c-level label="Emoji" provenance="ai">🔘 + 🔘 = 🔘</c-level>
+  </c-swap>
+
+  <h2>Events (cswap:swap)</h2>
+  <div id="log">Swap something above…</div>
+</main>
+<script src="bundle/cswap.iife.js"></script>
+<script>
+  var log = document.getElementById('log');
+  document.addEventListener('cswap:swap', function (e) {
+    log.textContent = 'cswap:swap ' + JSON.stringify(e.detail) + '\n' + log.textContent.replace('Swap something above…', '');
+  });
+</script>
+</body>
+</html>

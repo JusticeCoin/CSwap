@@ -1,0 +1,38 @@
+{
+  "name": "@justicecoin/cswap",
+  "version": "0.1.0",
+  "description": "C Swap: one idea written at several levels of language. Tap to swap in place. Every level shows who stands behind it.",
+  "private": true,
+  "type": "module",
+  "license": "Apache-2.0",
+  "main": "./src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./element": "./src/element.js",
+    "./parse": "./src/parse.js",
+    "./remark": "./src/remark.js",
+    "./react": "./src/react.jsx"
+  },
+  "files": ["src", "bundle", "docs", "demo.html", "README.md", "LICENSE"],
+  "scripts": {
+    "test": "vitest run",
+    "build": "vite build"
+  },
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "peerDependenciesMeta": {
+    "react": { "optional": true }
+  },
+  "devDependencies": {
+    "jsdom": "^26.0.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "remark-parse": "^11.0.0",
+    "remark-rehype": "^11.1.0",
+    "rehype-stringify": "^10.0.0",
+    "unified": "^11.0.5",
+    "vite": "^6.4.1",
+    "vitest": "^3.2.0"
+  }
+}
