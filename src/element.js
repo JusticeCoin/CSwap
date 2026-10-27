@@ -15,8 +15,8 @@
 const HALF_MS_DEFAULT = 170;
 const PROVENANCE_TEXT = {
   author: { text: 'Written by the author', mark: '' },
-  approved: { text: 'AI-drafted · Author approved', mark: '✓ ' },
-  ai: { text: 'AI generated · not reviewed by the author', mark: '⚠ ' },
+  approved: { text: 'AI-Authored Paraphrase · Author approved', mark: '✓ ' },
+  ai: { text: 'AI-Authored Paraphrase · not reviewed by the author', mark: '⚠ ' },
 };
 const LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
