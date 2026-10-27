@@ -13,7 +13,7 @@ import {
 } from './intake.js';
 
 const MARK = { author: '', approved: '✓ ', ai: '⚠ ' };
-const CHIP = { author: 'Written by the author', approved: 'AI-drafted · Author approved', ai: 'AI generated · not reviewed by the author' };
+const CHIP = { author: 'Written by the author', approved: 'AI-Authored Paraphrase · Author approved', ai: 'AI-Authored Paraphrase · not reviewed by the author' };
 
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 

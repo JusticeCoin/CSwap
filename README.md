@@ -65,8 +65,8 @@ Only CSS custom properties, all with defaults (no dependency on any app's tokens
 | `--cswap-color-1` | `#1a1a1a` / `#f2f2f2` | level 1 text (levels 4+ reuse 1-3; override per level with `color="..."` on `<c-level>`) |
 | `--cswap-color-2` | `#1f8f4e` / `#5fd38d` | level 2 text |
 | `--cswap-color-3` | `#2563c9` / `#6aa8ff` | level 3 text |
-| `--cswap-approved` | `#3fae6c` | "AI-drafted · Author approved" label |
-| `--cswap-ai` | `#d9a441` (amber) | "AI generated · not reviewed" label |
+| `--cswap-approved` | `#3fae6c` | "AI-Authored Paraphrase · Author approved" label |
+| `--cswap-ai` | `#d9a441` (amber) | "AI-Authored Paraphrase · not reviewed" label |
 | `--cswap-muted` | grey | inactive tabs, hint, "written by the author" label |
 | `--cswap-line` | grey | top and bottom rules |
 | `--cswap-focus` | level 3 colour | focus ring |
@@ -100,8 +100,8 @@ Every level carries its provenance, always visible under the text. Telling autho
 | Value | Label | Flag |
 | --- | --- | --- |
 | `author` | Written by the author | none |
-| `approved` | ✓ AI-drafted · Author approved | `+` |
-| `ai` | ⚠ AI generated · not reviewed by the author (amber) | `~` |
+| `approved` | ✓ AI-Authored Paraphrase · Author approved | `+` |
+| `ai` | ⚠ AI-Authored Paraphrase · not reviewed by the author (amber) | `~` |
 
 1. `author` is the default **only for hand-written text**.
 2. In AI-assisted flows an unflagged level must read as not reviewed: set `default-provenance="ai"` on `<c-swap>`, or pass `{ defaultProvenance: 'ai' }` to the parser.
@@ -114,8 +114,8 @@ Every level carries its provenance, always visible under the text. Telling autho
 
 ```
 A. The full-strength sentence from the author.
-B+*. Plainer version, AI-drafted and approved, and the one that opens first.
-C~. Simplest version, AI generated and not reviewed.
+B+*. Plainer version, AI-Authored Paraphrase, approved, and the one that opens first.
+C~. Simplest version, AI-Authored Paraphrase, not reviewed.
 ```
 
 - Level lines start with `A.`, `B.`, `C.` in that order. Flags go between the letter and the dot: `*` start on this level (default A), `+` approved, `~` not reviewed.

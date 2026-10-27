@@ -5,8 +5,8 @@
 //  1. Line syntax. An "A. ..." block followed by "B. ..." and "C. ..." blocks, in that order.
 //     Optional flags between the letter and the dot:
 //        *  start on this level (default is the first)
-//        +  AI-drafted, author approved
-//        ~  AI generated, not reviewed by the author
+//        +  AI-Authored Paraphrase, author approved
+//        ~  AI-Authored Paraphrase, not reviewed by the author
 //     e.g.  B+*. Plain-language version that opens first.
 //     A blank line ends the C block. A short plain "A. Author" list (A under 20 chars) is not a swap.
 //
@@ -23,8 +23,8 @@
 
 export const PROVENANCE = {
   author: { text: 'Written by the author' },
-  approved: { text: 'AI-drafted · Author approved' },
-  ai: { text: 'AI generated · not reviewed by the author' },
+  approved: { text: 'AI-Authored Paraphrase · Author approved' },
+  ai: { text: 'AI-Authored Paraphrase · not reviewed by the author' },
 };
 
 export const DEFAULT_LABELS = ['Author', 'Beginner', 'Cub'];

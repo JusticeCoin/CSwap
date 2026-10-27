@@ -6,7 +6,7 @@ Intentionally **not built yet** in v0.1.
 
 - `translate({ text, level, audience })` interface, bring-your-own-key, no model baked in.
 - **Authoring-time drafting:** output is created as provenance `ai` (not reviewed). It becomes `approved` only when the author approves it. Nothing is ever auto-promoted.
-- **Optional reader-time mode**, server-proxied so keys never reach the browser. Always labeled "AI generated · not reviewed by the author".
+- **Optional reader-time mode**, server-proxied so keys never reach the browser. Always labeled "AI-Authored Paraphrase · not reviewed by the author".
 - Per-author and per-post configuration of the B and C levels.
 
 - The intake screen ships with a no-AI demo translator only; wiring a real model (keys, rate limits, a proxy) is not done.

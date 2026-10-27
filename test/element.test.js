@@ -60,9 +60,9 @@ describe('<c-swap>', () => {
     const el = mount('', '<c-level>a</c-level><c-level provenance="approved">b</c-level><c-level provenance="ai">c</c-level>');
     const prov = () => el.shadowRoot.querySelector('.prov');
     root(el).click(); await tick();
-    expect(prov().textContent).toBe('✓ AI-drafted · Author approved');
+    expect(prov().textContent).toBe('✓ AI-Authored Paraphrase · Author approved');
     root(el).click(); await tick();
-    expect(prov().textContent).toBe('⚠ AI generated · not reviewed by the author');
+    expect(prov().textContent).toBe('⚠ AI-Authored Paraphrase · not reviewed by the author');
     expect(prov().classList.contains('ai')).toBe(true);
   });
 
